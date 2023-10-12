@@ -1,0 +1,8 @@
+Differences between Original Pessoas DB and My Pessoas DB:
+1 - changed tp_cidade.id_cidade -> tp_cidade_id
+2 - changed tipo_status_pessoa -> tipo_status_pessoas
+
+
+
+
+
