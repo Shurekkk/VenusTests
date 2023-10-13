@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Tipo_grupo extends Model
 {
     use HasFactory;
+    protected $table = 'tipo_grupo';
+
 
     /**
      * Get the grupos associated with the Tipo_grupo
@@ -20,5 +22,5 @@ class Tipo_grupo extends Model
         return $this->hasOne(Grupo::class,'id_tipo_grupo');
     }
 
-    
+
 }
