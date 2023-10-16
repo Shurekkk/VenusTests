@@ -18,7 +18,17 @@ class Tipo_status_pessoa extends Model
      */
     public function atendentes(): HasOne
     {
-        return $this->hasOne(Atendente::class,'status_atendente');
+        return $this->hasOne(Atendente::class,'status_atendente')->withDefault();
+    }
+
+    /**
+     * Get the pessoas associated with the Tipo_status_pessoa
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function pessoas(): HasOne
+    {
+        return $this->hasOne(Pessoa::class,'status')->withDefault();
     }
 
 }

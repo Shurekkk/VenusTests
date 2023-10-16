@@ -23,7 +23,7 @@ class Grupo extends Model
      */
     public function tipo_dia(): BelongsTo
     {
-        return $this->belongsTo(Tipo_dia::class,'id','tipo_dia');
+        return $this->belongsTo(Tipo_dia::class,'id','tipo_dia')->withDefault();
     }
 
     /**
@@ -33,7 +33,7 @@ class Grupo extends Model
      */
     public function tipo_grupo(): BelongsTo
     {
-        return $this->belongsTo(Tipo_grupo::class,'id','tipo_grupo');
+        return $this->belongsTo(Tipo_grupo::class,'id','tipo_grupo')->withDefault();
     }
 
     /**
@@ -43,7 +43,7 @@ class Grupo extends Model
      */
     public function salas(): BelongsTo
     {
-        return $this->belongsTo(Sala::class,'id','salas');
+        return $this->belongsTo(Sala::class,'id','salas')->withDefault();
     }
 
 

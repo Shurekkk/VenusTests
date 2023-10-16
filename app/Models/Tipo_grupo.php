@@ -19,7 +19,7 @@ class Tipo_grupo extends Model
      */
     public function grupos(): HasOne
     {
-        return $this->hasOne(Grupo::class,'id_tipo_grupo');
+        return $this->hasOne(Grupo::class,'id_tipo_grupo')->withDefault();
     }
 
 

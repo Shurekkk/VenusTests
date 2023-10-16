@@ -17,6 +17,6 @@ class Sala extends Model
      */
     public function grupos(): HasOne
     {
-        return $this->hasOne(Grupo::class, 'id_sala');
+        return $this->hasOne(Grupo::class, 'id_sala')->withDefault();
     }
 }

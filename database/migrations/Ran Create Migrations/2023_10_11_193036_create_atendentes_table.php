@@ -16,10 +16,12 @@ return new class extends Migration
             $table->unsignedBigInteger('id_pessoa')->nullable();
             $table->unsignedBigInteger('status_atendente')->nullable();
             $table->timestamps();
+            $table->softDeletes();
+
 
             $table->foreign('id_pessoa')->references('id')->on('pessoas');
             $table->foreign('status_atendente')->references('id')->on('tipo_status_pessoa');
-            
+
         });
     }
 

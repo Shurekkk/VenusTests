@@ -18,7 +18,7 @@ class Tipo_dia extends Model
      */
     public function grupos(): HasOne
     {
-        return $this->hasOne(Grupo::class, 'tipo_dia');
+        return $this->hasOne(Grupo::class, 'tipo_dia')->withDefault();
     }
 
 
