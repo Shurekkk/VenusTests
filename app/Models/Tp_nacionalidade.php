@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Tp_nacionalidade extends Model
 {
@@ -12,9 +12,10 @@ class Tp_nacionalidade extends Model
     protected $table = 'tp_nacionalidade';
 
     // PAI (Envia para)
-    public function pessoas(): HasOne
+    // from pessoa
+    // $table->foreign('nacionalidade')->references('id')->on('tp_nacionalidade');
+    public function pessoa(): HasMany
     {
-        return $this->hasOne(Pessoa::class,'nacionalidade')->withDefault();
+        return $this->hasMany(Pessoa::class,'nacionalidade');
     }
-
 }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Tipo_grupo extends Model
@@ -11,16 +12,11 @@ class Tipo_grupo extends Model
     use HasFactory;
     protected $table = 'tipo_grupo';
 
+    // PAI (envia para)
 
-    /**
-     * Get the grupos associated with the Tipo_grupo
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function grupos(): HasOne
+    // $table->foreign('id_tipo_grupo')->references('id')->on('tipo_grupo');
+    public function tipo_grupo(): HasMany
     {
-        return $this->hasOne(Grupo::class,'id_tipo_grupo')->withDefault();
+        return $this->hasMany(Tipo_grupo::class, 'id_tipo_grupo');
     }
-
-
 }

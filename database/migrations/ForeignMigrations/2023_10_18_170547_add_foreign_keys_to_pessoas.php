@@ -35,8 +35,7 @@ return new class extends Migration
             $table->dropForeign('orgao_expedidor');
             $table->dropForeign('status');
             $table->dropForeign('uf_idt');
-            $table->dropForeign('nacionalidade');
-
+            $table->dropForeign('uf_natural');
         });
     }
 };

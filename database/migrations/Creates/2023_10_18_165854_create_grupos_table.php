@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('grupos', function (Blueprint $table) {
             $table->id();
             $table->string('nome', 100);
+            $table->text('dirigente')->nullable();
+            $table->unsignedBigInteger('nr_mediuns')->nullable();
             $table->unsignedBigInteger('id_dia_semana');
             $table->time('hr_inicio');
             $table->time('hr_fim');
@@ -23,10 +25,6 @@ return new class extends Migration
             $table->unsignedBigInteger('nr_trabalhadores')->nullable();
             $table->unsignedBigInteger('id_sala')->nullable();
             $table->timestamps();
-
-            $table->foreign('id_dia_semana')->references('id')->on('tipo_dia');
-            $table->foreign('id_tipo_grupo')->references('id')->on('tipo_grupo');
-            $table->foreign('id_sala')->references('id')->on('salas');
         });
     }
 

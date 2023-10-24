@@ -4,23 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Tp_cidade extends Model
 {
     use HasFactory;
-
     protected $table = 'tp_cidade';
 
-    /**
-     * Get the pessoas associated with the Tp_cidade
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function pessoas(): HasOne
+    // from Pessoa
+    // $table->foreign('naturalidade')->references('id_cidade')->on('tp_cidade');
+    public function pessoa(): HasMany
     {
-        return $this->hasOne(Pessoa::class,'naturalidade', 'id_cidade')->withDefault();
+        return $this->hasMany(Pessoa::class,'naturalidade','id_cidade');
     }
-
-
 }

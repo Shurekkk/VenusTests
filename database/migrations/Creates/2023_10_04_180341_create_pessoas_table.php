@@ -30,7 +30,6 @@ return new class extends Migration
             $table->unsignedBigInteger('status')->nullable();
             $table->timestamps();
 
-            
         });
     }
 
